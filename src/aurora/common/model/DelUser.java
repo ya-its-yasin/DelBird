@@ -16,9 +16,10 @@ import javax.persistence.Table;
 
 public class DelUser implements Serializable {
 	
-	@Id
+	//@Id
 	//@GeneratedValue(strategy = GenerationType.AUTO, generator = "SQ_USERS")
 	//@SequenceGenerator(name = "SQ_USERS", sequenceName = "SQ_USERS",allocationSize=1)
+	
 	@Column(name = "USERNAME")
 	private long userName;
 	
