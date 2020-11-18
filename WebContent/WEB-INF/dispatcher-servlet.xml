@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+
+
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task 
+		http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<!-- Scans the classpath of this application for @Components to deploy as 
+		beans -->
+	<context:component-scan base-package="aurora" />
+	
+		
+	<!-- </bean> -->
+	<task:annotation-driven />
+
+	<!-- executor="executorWithPoolSizeRange" scheduler="taskScheduler" -->
+
+	<!-- Configures the @Controller programming model -->
+	
+	
+   <mvc:annotation-driven>
+   <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+   </mvc:message-converters>
+   </mvc:annotation-driven>
+	<!--mvc:view-controller path="/welcome.do" view-name="common/Home"/-->
+
+	<mvc:view-controller path="/TestMail.do" view-name="masters/TestMail" />
+	
+	<!-- Project Starts -->
+	<mvc:view-controller path="/ProjectGrid.do" view-name="masters/Project/ProjectGrid" />
+	<mvc:view-controller path="/Project.do" view-name="masters/Project/Project" />
+    <mvc:view-controller path="/ProjectFolder.do" view-name="masters/Project/ProjectFolder" />
+    <mvc:view-controller path="/ProjectUsers.do" view-name="masters/Project/ProjectUsers" />
+    <mvc:view-controller path="/ProjectDocumentsGrid.do" view-name="masters/Project/ProjectDocuments" />
+    <mvc:view-controller path="/ProjectDocumentFiles.do" view-name="masters/Project/ProjectDocumentFiles" />
+    <mvc:view-controller path="/ProjectFolderAccess.do" view-name="masters/Project/ProjectFolderAccess" />
+    <mvc:view-controller path="/AddProject.do" view-name="masters/Project/AddProject" />
+    <mvc:view-controller path="/ProjectDesc.do" view-name="masters/Project/ProjectDesc" />
+	<mvc:view-controller path="/ProjectSupportGrid.do" view-name="masters/Project/ProjectSupportGrid" />
+	<mvc:view-controller path="/ProjectSupport.do" view-name="masters/Project/ProjectSupport" />
+	<mvc:view-controller path="/ProjectMasterGrid.do" view-name="masters/Project/ProjectMasterGrid" />
+	<mvc:view-controller path="/ProjectMaster.do" view-name="masters/Project/ProjectMaster" />
+    <mvc:view-controller path="/ProjectSupportAssign.do" view-name="masters/Project/ProjectSupportAssign" />
+    <mvc:view-controller path="/ProjectRolesGrid.do" view-name="masters/Project/ProjectRolesGrid" />
+    <mvc:view-controller path="/ProjectRoles.do" view-name="masters/Project/ProjectRoles" />
+    <mvc:view-controller path="/MyTaskGrid.do" view-name="masters/MyTaskGrid" />
+    <mvc:view-controller path="/ProjectAmcGrid.do" view-name="masters/Project/ProjectAmcGrid" />
+    <mvc:view-controller path="/ProjectAmc.do" view-name="masters/Project/ProjectAmc" />
+    <mvc:view-controller path="/ProjectSupportLogDetail.do" view-name="masters/Project/ProjectSupportLogDetail" />
+    <mvc:view-controller path="/MyTask.do" view-name="masters/MyTask" />
+    <mvc:view-controller path="/DocumentViewer.do" view-name="masters/Project/DocumentViewer" />
+    <mvc:view-controller path="/ProjectSupportAssignDocs.do" view-name="masters/Project/ProjectSupportAssignDocs" />
+    <mvc:view-controller path="/ProjectSupportAction.do" view-name="masters/Project/ProjectSupportAction" />
+    
+	<!-- Project Ends -->
+	
+	<!-- RequirementType Starts -->
+	<mvc:view-controller path="/RequestTypeGrid.do" view-name="masters/RequestType/RequestTypeGrid" />
+	<mvc:view-controller path="/RequestType.do" view-name="masters/RequestType/RequestType" />
+	<!-- RequirementType Ends -->
+	
+	<!-- ScreenDesign Starts -->
+	<mvc:view-controller path="/ScreenDesignGrid.do" view-name="masters/ScreenDesign/ScreenDesignGrid" />
+	<mvc:view-controller path="/ScreenDesign.do" view-name="masters/ScreenDesign/ScreenDesign" />
+	<mvc:view-controller path="/ScreenDocuments.do" view-name="masters/ScreenDesign/ScreenDocuments" />
+	<mvc:view-controller path="/DocumentView.do" view-name="masters/ScreenDesign/DocumentView" />
+	<!-- ScreenDesign Ends -->
+	
+    <!-- Module Starts -->
+	<mvc:view-controller path="/module.do" view-name="masters/Module/ModuleScreen" />
+	<mvc:view-controller path="/ProjectModule.do" view-name="masters/Module/ProjectModule" />
+	<mvc:view-controller path="/ProjectScreen.do" view-name="masters/Module/ProjectScreen" />
+	<!-- Module Ends -->
+	
+	<!-- Client Starts -->
+	<mvc:view-controller path="/ClientGrid.do" view-name="masters/Client/ClientGrid" />
+	<mvc:view-controller path="/Client.do" view-name="masters/Client/Client" />
+	<!-- Client  Ends -->
+	
+	<!-- ClientRequest Starts -->
+	<mvc:view-controller path="/ClientRequest.do" view-name="masters/ClientRequest" />
+    <mvc:view-controller path="/ViewRequest.do" view-name="masters/ViewRequest" />
+    <mvc:view-controller path="/DraftRequest.do" view-name="masters/DraftRequest" />
+    <mvc:view-controller path="/ClientProjectDocuments.do" view-name="masters/ClientProjectDocuments" />
+    <mvc:view-controller path="/RequestGridAll.do" view-name="masters/RequestGridAll" />
+    <mvc:view-controller path="/RequestGridPending.do" view-name="masters/RequestGridPending" />
+    <mvc:view-controller path="/RequestGridClosed.do" view-name="masters/RequestGridClosed" />
+	<!-- ClientRequest Ends -->
+	
+	
+	<!-- Contractor Starts -->
+	<mvc:view-controller path="/ContractorGrid.do" view-name="masters/Contractor/ContractorGrid" />
+	<mvc:view-controller path="/Contractor.do" view-name="masters/Contractor/Contractor" />
+	<!-- Contractor  Ends -->
+	
+	<!-- Country Starts -->
+	<mvc:view-controller path="/CountryGrid.do" view-name="masters/CountryGrid" />
+	<mvc:view-controller path="/Country.do" view-name="masters/Country" />
+	<!-- Country Ends -->
+	
+	<!-- Currency Starts -->
+    <mvc:view-controller path="/CurrencyGrid.do" view-name="masters/Currency/CurrencyGrid" />
+	<mvc:view-controller path="/Currency.do" view-name="masters/Currency/Currency" />
+	<!-- Currency Ends -->
+	
+	<mvc:view-controller path="/UserGrid.do" view-name="masters/UserGrid"/>
+	<mvc:view-controller path="/User.do" view-name="masters/User" />
+	
+	<mvc:view-controller path="/UserGroupGrid.do" view-name="masters/UserGroupGrid"/>
+	<mvc:view-controller path="/UserGroup.do" view-name="masters/UserGroup" />
+	
+	<mvc:view-controller path="/Module.do" view-name="masters/Module/Module" />
+	<mvc:view-controller path="/ModuleGrid.do" view-name="masters/Module/ModuleGrid" />
+	
+	<mvc:view-controller path="/UnlockUser.do" view-name="masters/UnlockUser" />
+	<mvc:view-controller path="/EmailConfig.do" view-name="masters/EmailConfig" />
+	<mvc:view-controller path="/TestMail.do" view-name="masters/TestMail" />
+	<mvc:view-controller path="/Setup.do" view-name="masters/Setup"/>
+	
+	<mvc:view-controller path="/Reports.do" view-name="masters/Reports"/>
+	<mvc:view-controller path="/Company.do" view-name="masters/Company" />
+	<mvc:view-controller path="/SystemSetup.do" view-name="masters/SystemSetup"/>
+	<mvc:view-controller path="/Menu.do" view-name="masters/Menu" />
+	
+	
+	
+	<mvc:view-controller path="/logout.do" view-name="common/logout"/>
+    
+	<mvc:view-controller path="/MainLayout.do" view-name="common/MainLayout" />
+	
+	
+	
+	<mvc:view-controller path="/sessionexpired.do" view-name="common/session"/>
+	
+	<mvc:view-controller path="/DashBoard.do" view-name="common/DashBoard" />
+	<mvc:view-controller path="/ChangePassword.do" view-name="common/ChangePassword" />
+	<mvc:view-controller path="/MyProfile.do" view-name="common/MyProfile" />
+	
+	<mvc:view-controller path="/ResetPassword.do" view-name="common/ResetPassword" />	
+	<mvc:view-controller path="/UserPreference.do" view-name="common/UserPreference" />
+	
+	<mvc:view-controller path="/ExportToExcel.do" view-name="common/ExportToExcel" />
+	<mvc:view-controller path="/ScrollViewGrid.do" view-name="common/ScrollViewGrid" />
+	
+
+	<mvc:view-controller path="/PasswordResetOnFirstLog.do" view-name="common/PasswordResetOnFirstLog" />
+	<!-- <mvc:view-controller path="/Test.do" view-name="common/Test"/> -->
+
+	<!-- Admin/Master -->
+		
+	<mvc:view-controller path="/GenerateReport.do" view-name="admin/GenerateReport" />
+	<mvc:view-controller path="/GenerateCVReport.do" view-name="admin/GenerateCVReport" />	
+	<mvc:view-controller path="/TakeAuthentication.do" view-name="admin/TakeAuthentication" />
+			
+	
+	
+	<mvc:view-controller path="/PasswordPolicy.do" view-name="admin/PasswordPolicy" />
+	
+	<mvc:view-controller path="/Application.do" view-name="admin/Application" />
+	
+	
+	
+	
+	<mvc:view-controller path="/UserGroupMenuLink.do" view-name="masters/UserGroupMenuLink" />
+	<mvc:view-controller path="/UGMenuLinkGrid.do" view-name="masters/UGMenuLinkGrid" />
+	<mvc:view-controller path="/UserMenuLink.do" view-name="masters/UserMenuLink" />
+	<mvc:view-controller path="/UserMenuGrid.do" view-name="masters/UserMenuGrid" />
+	
+	
+	<!-- misc -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+    <!--  <bean id="demoServiceBasicUsageCron" class="aurora.master.controller.Scheduler"></bean> -->
+     
+     
+    
+     
+     
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="lang"></property>
+		</bean>
+		
+	</mvc:interceptors>
+
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="lang" />
+	</bean>
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en" />
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>classpath:messages</value>
+				<value>classpath:labels</value>
+				<value>classpath:grid</value>
+				<value>classpath:lblCommon</value>
+			</list>
+		</property>
+		<property name="defaultEncoding" value="UTF-8"></property>
+		 <property name="useCodeAsDefaultMessage" value="false"/>
+	</bean>
+
+	<bean id="handlerMapping"
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+		<property name="interceptors">
+			<ref bean="localeChangeInterceptor" />
+		</property>
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="5242880" />
+
+
+	</bean>
+
+	<!-- Configures Hibernate - Database Config -->
+	<import resource="db-config.xml" />
+<import resource="AppSettings.xml" />
+ <!--import resource="scheduler.xml" /-->
+	
+
+</beans>
+
+

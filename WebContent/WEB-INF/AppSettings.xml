@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	
+	<!-- Scans the classpath of this application for @Components to deploy as beans -->
+	 <context:component-scan base-package="aurora.common.model" />   
+	 <context:component-scan base-package="aurora.master.model" />   
+    <bean id="AppSettings" class="aurora.common.model.AppSettings">
+    <property name="companyName">
+    <value>ABC pvt Ltd</value>
+    </property>    
+    <property name="companyEmailId">
+    <value>abc@abc.com</value>
+    </property>
+    <property name="licenseKey">
+    <value>71F3F939C63B23ABDD1BADBD0EE7C2A6</value>
+    </property>
+    <property name="adAuthentication">
+    <!-- WHEN MAKING FALSE SET IS_AUTHENTICATED_ANONYMOUSLY in waffle-filter.xml ,  when making true set IS_AUTHENTICATED_FULLY -->
+    <value>true</value>
+    </property>
+    <property name="filePath">
+    <value>D:/commonfileupload/</value>
+    </property>
+     <property name="logoPath">
+    <value>/images/logo4.png</value>
+    </property>
+     <property name="logoPathdata">
+    <value>/images/nodata.jpg</value>
+    </property>
+    <property name="filePathnew">
+    <value>/Uploads/PSD</value>
+    </property>
+    <property name="filePathnewone">
+    <value>/jasper/BatchSub.jasper</value>
+    </property>
+    <property name="filePathnewtwo">
+    <value>/jasperarabic/CourseSub.jasper</value>
+    </property>
+     <property name="filePathnewthree">
+    <value>/jasper/EnrollSubReport.jasper</value>
+    </property>
+     <property name="filePathnewfour">
+    <value>/jasperarabic/EnrollSubReportar.jasper</value>
+    </property>
+     <property name="filePathnewfive">
+    <value>/jasperarabic/CourseSubar.jasper</value>
+    </property>
+   
+    <property name="alertExpiryDue" value="30"></property>
+     <property name="promptOnSave">
+    	<value>false</value>
+    </property>
+     
+    </bean>
+
+      
+</beans>
+

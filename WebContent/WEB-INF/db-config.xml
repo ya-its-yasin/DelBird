@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	
+
+<!-- Load DB/Application properties references -->
+	<bean id="dbProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				
+				<value>classpath:jdbc.properties</value>
+			    <value>classpath:cronexpression.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"><value>${jdbc.driverClassName}</value></property>
+        <property name="url"><value>${jdbc.url}</value></property>
+        <property name="username"><value>${jdbc.username}</value></property>
+        <property name="password"><value>${jdbc.password}</value></property>
+    </bean>
+    
+	
+     <!-- Hibernate SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource"><ref bean="dataSource"/></property>
+         <property name="packagesToScan">
+          <list>
+        <value>aurora.common.model</value>
+        <value>aurora.master.model</value>
+        <value>aurora.transaction.model</value>
+    </list>
+         
+         </property>
+         
+        <property name="hibernateProperties">
+        <props>
+         <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+           <!--  <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop> -->
+            <prop key="hibernate.show_sql">true</prop>
+			<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->			
+			<prop key="hibernate.c3p0.min_size">40</prop>
+		    <prop key="hibernate.c3p0.max_size">100</prop>
+		    <prop key="hibernate.c3p0.timeout">1800</prop>    
+		    <prop key="hibernate.c3p0.idle_test_period">3000</prop>
+		    <prop key="hibernate.c3p0.acquireRetryDelay">1000</prop>    
+		    <prop key="hibernate.c3p0.acquireRetryAttempts">60</prop>    
+		    <prop key="hibernate.c3p0.breakAfterAcquireFailure">false</prop>
+		    <prop key="hibernate.c3p0.batch_size">50</prop>
+		 	<!--prop key="hibernate.cache.use_second_level_cache">false</prop>
+		 	<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>  
+		 	<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+		 	<prop key="hibernate.cache.use_query_cache">true</prop-->
+		 
+		    
+		    
+		    
+		    <!--end connection pool; -->			
+        </props>
+        </property>
+    </bean>
+    
+     
+   
+   <!--hibernateTemplate-->
+   <bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+   	<property name="sessionFactory">
+   		<ref bean="sessionFactory"/> 
+   	</property>
+   </bean>
+	
+	<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+	<tx:annotation-driven/>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+    
+
+</beans>
