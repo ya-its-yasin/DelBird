@@ -18,9 +18,12 @@ public class DelUserDAO  extends ANavigationDao implements IMasterDao  {
 	private HibernateTemplate hibernateTemplate;
 
 	@Override
-	public Object add(Object obj) throws Exception {
+	public Object add(Object delUser) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		hibernateTemplate.clear();
+		hibernateTemplate.flush();
+		hibernateTemplate.save(delUser);
+		return delUser;
 	}
 
 	@Override

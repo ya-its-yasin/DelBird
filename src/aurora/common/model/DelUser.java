@@ -30,7 +30,6 @@ public class DelUser implements Serializable {
 	@Column(name = "GENDER")
 	private long gender;
 	
-
 	@Column(name = "DOB")
 	private long DOB;
 	
