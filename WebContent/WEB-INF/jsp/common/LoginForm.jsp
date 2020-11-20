@@ -189,6 +189,7 @@ function capLock(e){
 function capLock1(e){
 	document.getElementById('errorblock').text="";
 	}
+	
 	function Register()
 	{debugger; window.location='DelRegister.do' ;
 		<%-- var path="<%=request.getContextPath() %>";
