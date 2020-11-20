@@ -14,9 +14,9 @@ import javax.persistence.Table;
 @Table(name = "USERS")
 public class DelUser implements Serializable {
 	
-	//@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO, generator = "SQ_USERS")
-	//@SequenceGenerator(name = "SQ_USERS", sequenceName = "SQ_USERS",allocationSize=1)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SQ_DELUSERS")
+	@SequenceGenerator(name = "SQ_DELUSERS", sequenceName = "SQ_DELUSERS",allocationSize=1)
 	
 	@Column(name = "USERNAME")
 	private long userName;

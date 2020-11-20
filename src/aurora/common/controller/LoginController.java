@@ -61,7 +61,11 @@ public class LoginController {
 			HttpServletRequest httpServletRequest) {
 		return "/common/LoginForm";
 	}
-
+	/*@RequestMapping(value = "DelRegister.do")
+	public String DelRegUser(ModelMap model, HttpSession httpSession,
+			HttpServletRequest httpServletRequest) {
+		return "/common/RegDelUser";
+	}*/
 
 	@RequestMapping(value = "welcome.do")
 	public String processForm(ModelMap model, HttpSession httpSession,

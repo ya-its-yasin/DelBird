@@ -189,7 +189,12 @@ function capLock(e){
 function capLock1(e){
 	document.getElementById('errorblock').text="";
 	}
-	
+	function Register()
+	{debugger; window.location='DelRegister.do' ;
+		<%-- var path="<%=request.getContextPath() %>";
+		  path=path+"/"+"DelRegister.do?";
+		 window.location.replace(path); --%>
+	}
 </script>
 </head>
 
@@ -246,6 +251,7 @@ function capLock1(e){
                         </ul>
                         <!-- <input class="login_btn blue_lgel" name="" value="Login" type="button" onclick="newpage()"> -->
                         <input class="login_btn blue_lgel" style="background-color:#335075     !important" name="btnSubmit" onclick ="return checkValidation(this);" type="submit" value="Login" >	
+                         <input class="login_btn blue_lgel" style="background-color:#335075     !important" name="btnSubmit" onclick ="Register();" value="Register" >	
 						
                     </div>
                    <ul class="login_opt_link">

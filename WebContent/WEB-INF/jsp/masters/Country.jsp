@@ -268,9 +268,13 @@ String Value = request.getParameter("Value"); %>
 					  {
 					  var url;
 						  if(mode=="A")
+							  {
 							  url="saveCountry.do?";
+							  }
 						  if(mode=="E")
-							  url="updateCountry.do?";
+						  { url="updateCountry.do?";
+						  }
+						  
 							  $.ajax({
 							        type: "POST",
 							        url:url,       

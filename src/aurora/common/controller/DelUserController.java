@@ -33,9 +33,9 @@ public class DelUserController {
 	@Autowired
 	private DelUserService delUserService;
 
-	@RequestMapping(value = "addUser.do", method = RequestMethod.POST)
+	@RequestMapping(value = "addDelUser.do", method = RequestMethod.POST)
 	public @ResponseBody
-	Map<String, Object> addUser(HttpServletRequest request,
+	Map<String, Object> addDelUser(HttpServletRequest request,
 			HttpServletResponse response,  @ModelAttribute("delUser") DelUser delUser,BindingResult bindingResult) throws ParseException {
 		response.setHeader("Cache-Control", "no-cache");
 		Map<String, Object> map = delUserService.addDelUser(delUser, request);

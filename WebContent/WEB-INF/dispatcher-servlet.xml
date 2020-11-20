@@ -175,6 +175,8 @@
 	<mvc:view-controller path="/UserMenuLink.do" view-name="masters/UserMenuLink" />
 	<mvc:view-controller path="/UserMenuGrid.do" view-name="masters/UserMenuGrid" />
 	
+	<mvc:view-controller path="/DelRegister.do" view-name="common/RegDelUser" />
+	
 	
 	<!-- misc -->
 	<bean id="viewResolver"
