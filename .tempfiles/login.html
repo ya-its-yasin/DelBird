@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>DelBird-Login</title><link rel="icon" href="DelBird.jpg" />
+<style type="text/css">
+	#logo{ 
+	position:fixed; 
+	top:-35; 
+	left:0; 
+}
+body{
+	background-image:url('background.jpg');
+	background-repeat: no-repeat;
+	
+}
+input[type=text],input[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+th{
+	text-align: left;
+}
+input[type=submit] {
+  width:match_parent;
+  background-color: #33cc00;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+</style>
+</head>
+<body>
+	<div id="logo"> 
+	<img src="delbird.png"> 
+</div><br><br><br>
+
+<center>
+<form role="form" class="form-horizontal">
+	<center><b><font family="myFirstFont" size="30px" color="black">Sign In</font></b></center>
+<table align="center">
+	<tr><th>USERNAME:</th><th><input type="text" class="form-log" name="uname" placeholder="Enter your username" required></th>
+	</tr>
+	<tr><th>PASSWORD:</th><th><input type="password" class="form-log" name="pwd" placeholder="Enter your password" required></th></tr>
+</table>
+<center><input type="submit" name="Log In">
+</center></form></center><br><br>
+</body>
+</html>

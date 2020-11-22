@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>DelBird</title><link rel="icon" href="DelBird.jpg" />
+
+<style type="text/css">
+	#logo{ 
+	position:fixed; 
+	top:-35; 
+	left:0; 
+}
+body{
+	background-image:url('background.jpg');
+	background-repeat: no-repeat;
+	
+}
+
+input[type=text],input[type=email],input[type=password],input[type=date], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+th{
+	text-align: left;
+}
+input[type=submit] {
+  width:match_parent;
+  background-color: #33cc00;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+th:odd{
+	font-size: 30px;
+}
+
+</style>
+</head>
+<body>
+	<div id="logo"> 
+	<img src="delbird.png"> 
+</div> 
+
+<form role="form" class="form-horizontal">
+	<center><b><font family="myFirstFont" size="20px" color="black">CREATE ACCOUNT</font></b></center>
+<table align="center">
+	<tr><th>USERNAME:</th><th><input type="text" class="form-control" name="uname" placeholder="Enter your name" required></th>
+	</tr>
+	<tr><th>MAILID:</th><th><input type="email" class="form-control" name="uid" placeholder="Enter your email id" required></th></tr>
+	<tr><th>MOBILE NUMBER:</th><th><input type="text" class="form-control" name="mobnum" placeholder="Enter your mobile number" required></th></tr>
+	<tr><th>DATE OF BIRTH:</th><th><input type="date" class="form-control"  name="dob" placeholder="Enter your date of birth" required></th></tr>
+	<tr><th>GENDER:</th><th><input type="text" class="form-control" name="gender" placeholder="Enter your gender" required></th>
+	</tr>
+	<!--<tr><th>GENDER:</th><th><select class="form-control" name="gender">
+		<option value="selectgender">-select gender-</option>
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+	</select></th></tr>-->
+	<tr><th>PASSWORD:</th><th><input type="password" class="form-control" name="pwd" placeholder="Enter your password" required></th></tr>
+	<tr><th>CONFIRM PASSWORD:</th><th><input type="password" class="form-control" name="cpwd" placeholder="Re enter your password" required></th></tr>
+	
+</table>
+<center><input type="submit" name="submit">
+</center></form><br><br>
+
+</body>
+
+</html>
