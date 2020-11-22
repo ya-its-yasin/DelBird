@@ -11,45 +11,18 @@
     <meta name="viewport" content="width=device-width" />
     <title>JBASE</title>
     <link rel="shortcut icon" href="images/logo4.png" type="image/png">
- <style type="text/css">
-	#logo{ 
-	position:fixed; 
-	top:-35; 
-	left:0; 
-}
-body{
-	background-image:url('images/background.jpg');
-	background-repeat: no-repeat;
-	
-}
-input[type=text],input[type=password]{
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-
-}
-th{
-	text-align: left;
-}
-input[type=submit] {
-  width:match_parent;
-  background-color: #33cc00;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-</style>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+    <link href="css/themes.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/easyui.css">
+    <link href="css/typography.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/shCore.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+     <link href="css/form.css" rel="stylesheet" type="text/css">
+      <link href="css/wizard.css" rel="stylesheet" type="text/css">
+      
+          <link href="css/iziToast.css" rel="stylesheet" type="text/css">
             <!-- <link href="css/stylePwReset.css" rel="stylesheet" type="text/css"> -->
         <script src="commonjs/jquery.min.js"></script>
     <script src="commonjs/jquery-ui.min.js"></script>
@@ -227,22 +200,69 @@ function capLock1(e){
 </head>
 
 <body id="theme-default" class="full_block"  onload="window.history.forward(); document.forms[0].j_username.focus();" onpageshow="if (event.persisted) window.history.forward();" >
- 	<div id="logo"> 
-	<img src="delbird.png"> 
-</div><br><br><br>
+ <div class="panel layout-panel layout-panel-north panel-htop" style="width: 100%; left: 0px; top: 0px;">
+ <div data-options="region:'north'"  title="" class="panel-body panel-body-noheader layout-body">
+        <nav class="navbar navbar-default navbar-fixed-top" style="height:45px;z-index:9999999;background-color:#335075;">
+            <div class="container-fluid" style="height:45px;">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header" style="height:40px;">
+                    
+                   <img style="margin-top:-13px;" alt="" src="images/logo4.png" height="50px" width="50px"> <div class="navbar-brand" style="height:40px;color:white;">JBASE</div>
+                </div>
 
-<center>
-<form role="form" class="form-horizontal">
-	<center><b><font family="myFirstFont" size="30px" color="black">Sign In</font></b></center>
-<table align="center">
-	<tr><th>USERNAME:</th><th><input type="text" class="form-log" name="uname" placeholder="Enter your username" required></th>
-	</tr>
-	<tr><th>PASSWORD:</th><th><input type="password" class="form-log" name="pwd" placeholder="Enter your password" required></th></tr>
-</table>
-<center><input type="submit" name="Log In">   <br>                     
-<button  name="btnSubmit" onclick ="Register();" value="Register" >	Sign up</button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-</center></form></center><br><br>
+
+
+                    
+
+
+                    
+
+
+                    
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+     <input type="hidden" name="userType" id="userType" value="<%=request.getSession().getAttribute("currentUserType")%>"/> 
+    </div></div>
+    <div id="login_page">
+        <div class="login_container" style="width:543;margin-top:-25px;">
+          
+            <div class="block_container blue_d" style="background-color:#f8f7f1 !important">
+                <form action="#" method="post" id="theFormID">
+                    <div class="block_form">
+                    <div class="container login-box-header " >
+                        
+                        <label><spring:message code="label.logIn"/></label></div>
+                        <hr style="    border-top: 4px solid rgb(51, 80, 117);">
+                        <ul>
+                     
+                            <li class="login_user">
+                               <!--  <input name="" value="username" type="text"> -->
+                               <label class="input-group" for="username" style="margin-bottom:0px;"><spring:message code="label.userName"/></label>
+                                <input type="text" name="j_username"  id="j_username"  class="inputtxt"   />
+                            </li>
+                            <li class="login_pass">
+                             <!--    <input name="" type="password" value="123456"> -->
+                                 <label class="input-group" for="username" style="margin-bottom:0px;"><spring:message code="label.password"/></label>
+                                <input type="password" name="j_password" id="j_password"   class="inputtxt" />
+                            </li>
+                        </ul>
+                        <!-- <input class="login_btn blue_lgel" name="" value="Login" type="button" onclick="newpage()"> -->
+                        <input class="login_btn blue_lgel" style="background-color:#335075     !important" name="btnSubmit" onclick ="return checkValidation(this);" type="submit" value="Login" >	
+                         <input class="login_btn blue_lgel" style="background-color:#335075     !important" name="btnSubmit" onclick ="Register();" value="Register" >	
+						
+                    </div>
+                   <ul class="login_opt_link">
+                      
+                    </ul> 
+                </form>
+            </div>
+        </div>
+    </div>
+  
 </body>
 
 <!-- Mirrored from www.lab.westilian.com/bingo-admin/login-02.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jun 2018 09:05:57 GMT -->

@@ -70,9 +70,6 @@ th:odd{
 
 var formName='fmDelReg';
 //var value=$('#fmCountry #hidValue').val();//document.getElementById("hidValue").value;
-$(function (){
-	$('#fmDelReg #nameS').watermark('<spring:message code="label.name"/>');
-});
 
 
         
@@ -80,7 +77,7 @@ $(function (){
 		  {  debugger;
 		 	  //var mode=document.getElementById("hidMode").value;	
 			  //var hasChanges=document.getElementById("hidHasChanges").value;
-			 url="saveDelUser.do?";
+			 url="addDelUser.do?";
 							 $.ajax({
 							        type: "POST",
 							        url:url,       
