@@ -1,6 +1,7 @@
 package aurora.common.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,71 +18,86 @@ public class DelUser implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SQ_DELUSERS")
 	@SequenceGenerator(name = "SQ_DELUSERS", sequenceName = "SQ_DELUSERS",allocationSize=1)
+	@Column(name= "USERKEY")
+	private long userKey;
 	
 	@Column(name = "USERNAME")
-	private long userName;
+	private String userName;
 	
 	@Column(name = "USERID")
-	private long userId;
+	private String userId;
 	
 	@Column(name = "MOBNUM")
-	private long mobNum;
+	private String mobNum;
 	
 	@Column(name = "GENDER")
-	private long gender;
+	private String gender;
 	
 	@Column(name = "DOB")
-	private long DOB;
+	private Date dobDateTime;
 	
 	@Column(name = "PASSWORD")
-	private long password;
+	private String password;
 	
-	public long getUserName() {
+	
+	
+
+	public String getUserName() {
 		return userName;
 	}
 
-	public void setUserName(long userName) {
+	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
-	public long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
-	public long getMobNum() {
+	public String getMobNum() {
 		return mobNum;
 	}
 
-	public void setMobNum(long mobNum) {
+	public void setMobNum(String mobNum) {
 		this.mobNum = mobNum;
 	}
 
-	public long getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(long gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
-	public long getDOB() {
-		return DOB;
+	
+
+	public Date getDobDateTime() {
+		return dobDateTime;
 	}
 
-	public void setDOB(long dOB) {
-		DOB = dOB;
+	public void setDobDateTime(Date dobDateTime) {
+		this.dobDateTime = dobDateTime;
 	}
 
-	public long getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(long password) {
+	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public long getUserKey() {
+		return userKey;
+	}
+
+	public void setUserKey(long userKey) {
+		this.userKey = userKey;
 	}
 	
 	

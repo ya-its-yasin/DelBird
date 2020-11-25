@@ -105,13 +105,8 @@ var formName='fmDelReg';
 						    		}
 						    	});
 					  }
-				  else
-					  {
-					  $.messager.alert('<spring:message code="messages.alert"/>','<spring:message code="messages.savealert"/>');
-					 
-					  }
-				  }
-		  }  
+				
+				    
         
         
     </script>
@@ -127,20 +122,22 @@ var formName='fmDelReg';
 <form id ="fmDelReg" role="form" class="form-horizontal">
 	<center><b><font family="myFirstFont" size="20px" color="black">CREATE ACCOUNT</font></b></center>
 <table align="center">
-	<tr><th>USERNAME:</th><th><input type="text" class="form-control" name="uname" placeholder="Enter your name" required></th>
+	<tr><th>USERNAME:</th><th><input type="text" class="form-control" name="userName" placeholder="Enter your name" required></th>
 	</tr>
-	<tr><th>MAILID:</th><th><input type="email" class="form-control" name="uid" placeholder="Enter your email id" required></th></tr>
-	<tr><th>MOBILE NUMBER:</th><th><input type="text" class="form-control" name="mobnum" placeholder="Enter your mobile number" required></th></tr>
-	<tr><th>DATE OF BIRTH:</th><th><input type="date" class="form-control"  name="dob" placeholder="Enter your date of birth" required></th></tr>
-	<tr><th>GENDER:</th><th><input type="text" class="form-control" name="gender" placeholder="Enter your gender" required></th>
+	<tr><th>MAILID:</th><th><input type="email" class="form-control" name="userId" placeholder="Enter your email id" required></th></tr>
+	<tr><th>MOBILE NUMBER:</th><th><input type="text" class="form-control" name="mobNum" placeholder="Enter your mobile number" required></th></tr>
+		<tr><th>GENDER:</th><th><input type="text" class="form-control" name="gender" placeholder="Enter your gender" required></th>
+	<tr><th>DATE OF BIRTH:</th><th><input type="date" class="form-control"  name="dobDateTime" placeholder="Enter your date of birth" required></th></tr>
 	</tr>
 	<!--<tr><th>GENDER:</th><th><select class="form-control" name="gender">
 		<option value="selectgender">-select gender-</option>
 		<option value="male">Male</option>
 		<option value="female">Female</option>
 	</select></th></tr>-->
-	<tr><th>PASSWORD:</th><th><input type="password" class="form-control" name="pwd" placeholder="Enter your password" required></th></tr>
-	<tr><th>CONFIRM PASSWORD:</th><th><input type="password" class="form-control" name="cpwd" placeholder="Re enter your password" required></th></tr>
+	<tr><th>PASSWORD:</th><th><input type="password" class="form-control" name="password" placeholder="Enter your password" required></th></tr>
+		<tr><th>USERKEY:</th><th><input type="hidden" class="form-control" name="userKey" ></th></tr>
+	
+	<!-- <tr><th>CONFIRM PASSWORD:</th><th><input type="password" class="form-control" name="cpassword" placeholder="Re enter your password" required></th></tr>  -->
 	
 </table>
 <center><input type="submit" name="submit" onclick="saveData()">
