@@ -135,7 +135,7 @@ var formName='fmDelReg';
 		<option value="female">Female</option>
 	</select></th></tr>-->
 	<tr><th>PASSWORD:</th><th><input type="password" class="form-control" name="password" placeholder="Enter your password" required></th></tr>
-		<tr><th>USERKEY:</th><th><input type="hidden" class="form-control" name="userKey" ></th></tr>
+		<tr><th></th><th><input type="hidden" class="form-control" name="userKey" ></th></tr>
 	
 	<!-- <tr><th>CONFIRM PASSWORD:</th><th><input type="password" class="form-control" name="cpassword" placeholder="Re enter your password" required></th></tr>  -->
 	

@@ -1,0 +1,12 @@
+/aurora/
+/cronexpression.properties
+/grid_ar.properties
+/grid_en.properties
+/jdbc.properties
+/labels_ar.properties
+/labels_en.properties
+/lblCommon.properties
+/log4j.properties
+/messages_ar.properties
+/messages_en.properties
+/schedule.properties
