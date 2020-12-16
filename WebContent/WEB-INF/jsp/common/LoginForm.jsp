@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width" />
-    <title>DelBird</title>
+    <title>DelBird - login</title>
     <link rel="shortcut icon" href="images/logo4.png" type="image/png">
  <style type="text/css">
 	#logo{ 
@@ -57,72 +57,32 @@ input[type=submit]:hover {
 
 
 
-function checkValidation(){debugger;
-var name =document.forms[0].userName.value;
+function checkValidation(){
+	debugger;
+var userId =document.forms[0].userId.value;
 var pass =document.forms[0].password.value;
-	$.messager.progress(); 
+	//$.messager.progress(); 
 		 $.ajax({
 	 		  type: "POST",
-	 		  url: "LoginValidation.do",
+	 		  url: "DelLoginValidation.do",
 	 		  dataType:"json",
 	 		
 	 		 async:false,
 	 		  data:{
-	 			 
-	 			 loginId: $('#userName').val(),
+	 			  loginId: $('#userId').val(),
 	 		      password: $('#password').val()
 	 			  },
 	 	  success: function(response){
 	 		  debugger;
+	 		  
 
-	 	/*	 if(response.keyword=="SUCCESS")
+	 		 if(response.keyword=="SUCCESS")
 	 		 {
-	 			  var userName=$('#userName').val();
-	 			  var userKey=response.data[0].userKey;
-		 		  var action="L1";
-		 		  var userKey=response.data[0].userKey;
-			 		 $.ajax({
-			 	 		  type: "POST",
-			 	 		  url: "saveUserLogWithUserKey.do",
-			 	 		  dataType:"json",
-			 	 	  	  async:false,
-			 	 		  data:{
-			 	 			  userKey:userKey,
-			 	 		      userName: userName,
-			 	 		      action:action
-			 	 			  },
-			 	 	  success: function(response){
-			 	 		  
-			 	 	  }
-			 		
-			 		  });
-	 		  var userType=response.data[0].userType; 
-	 	     
-	 				
+	 				debugger;
+	 				window.location='DelRegister.do' ;
 	 		 }
-	 		 else 
-	 			 {
-	 			var userName=$('#j_username').val();
-		 		  var action="L1";
-			 		 $.ajax({
-			 	 		  type: "POST",
-			 	 		  url: "saveUserLog.do",
-			 	 		  dataType:"json",
-			 	 	  	  async:false,
-			 	 		  data:{
-			 	 		      userName: userName,
-			 	 		      action:action
-			 	 			  },
-			 	 	  success: function(response){
-			 	 		  
-			 	 	  }
-			 		
-			 		  });
-	 			CAlert.Danger("The username or password you entered is incorrect !");
-	 			$.messager.progress('close'); 
-	 			 }
+	 		
 	 		 
-	 		  */
 		 }, error: function (error) {
            debugger;
          }
@@ -166,14 +126,14 @@ function capLock1(e){
 </div><br><br><br>
 
 <center>
-<form role="form" class="form-horizontal">
+<form role="form" action="#" method="post" id="theFormID" class="form-horizontal">
 	<center><b><font family="myFirstFont" size="30px" color="black">Sign In</font></b></center>
 <table align="center">
-	<tr><th>USERNAME:</th><th><input type="text" class="form-log" name="userName" id="username" placeholder="Enter your username" required></th>
+	<tr><th>EMAIL ID:</th><th><input type="text" class="form-log" name="userId" id="userId" placeholder="Enter your username" required></th>
 	</tr>
 	<tr><th>PASSWORD:</th><th><input type="password" class="form-log" name="password" id="password" placeholder="Enter your password" required></th></tr>
 </table>
-<center><input type="submit" name="LogIn" onclick ="return checkValidation(this);"  value="Login" >   <br>                     
+<center> <input class="login_btn blue_lgel" style="background-color:#335075     !important" name="btnSubmit" onclick ="return checkValidation(this);" type="submit" value="Login" >	 <br>                     
 <button  name="btnSubmit" onclick ="Register();" value="Register" >	Sign up</button>
 
 </center></form></center><br><br>

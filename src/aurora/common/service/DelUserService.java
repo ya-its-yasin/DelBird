@@ -20,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import aurora.common.model.CustomCombo;
 import aurora.common.model.DelUser;
+import aurora.common.model.User;
 import aurora.master.model.Country;
 import aurora.master.service.CountryService;
 import aurora.common.dao.DelUserDAO;
@@ -37,7 +38,7 @@ public class DelUserService {
 	static Logger logger = Logger.getLogger(DelUserService.class);
 
 	@Autowired
-	private DelUserDAO delUserDAO;
+	private static DelUserDAO delUserDAO;
 	
 	@Autowired
 	MessageSource messageSource;
@@ -70,6 +71,13 @@ public class DelUserService {
 
 		return JsonReaderWriter.mapOK(jsonObject, msg,fMsg);
 
+	}
+	
+	@Transactional
+	public static List<DelUser> getDelUserServ(String loginId, String password) throws Exception{
+		List<DelUser> DelUsers=null;
+		DelUsers= delUserDAO.getDelUsers(loginId, password);
+		return DelUsers;
 	}
 	
 	

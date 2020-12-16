@@ -1,4 +1,3 @@
-/aurora/
 /cronexpression.properties
 /grid_ar.properties
 /grid_en.properties
@@ -9,4 +8,5 @@
 /log4j.properties
 /messages_ar.properties
 /messages_en.properties
+/aurora/
 /schedule.properties
