@@ -20,9 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import aurora.common.model.CustomCombo;
 import aurora.common.model.DelUser;
-import aurora.common.model.User;
-import aurora.master.model.Country;
-import aurora.master.service.CountryService;
+
 import aurora.common.dao.DelUserDAO;
 import aurora.util.ConstantsMsg;
 import aurora.util.DBConstants.Align;

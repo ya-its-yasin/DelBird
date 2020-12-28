@@ -176,6 +176,8 @@
 	<mvc:view-controller path="/UserMenuGrid.do" view-name="masters/UserMenuGrid" />
 	
 	<mvc:view-controller path="/DelRegister.do" view-name="common/RegDelUser" />
+	<mvc:view-controller path="/DelMailBox.do" view-name="common/DelMailBox" />
+	
 	
 	
 	<!-- misc -->

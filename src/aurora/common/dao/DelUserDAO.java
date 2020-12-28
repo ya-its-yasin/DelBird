@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import aurora.common.ANavigationDao;
 import aurora.common.IMasterDao;
 import aurora.common.model.DelUser;
-import aurora.common.model.User;
 
 @SuppressWarnings("unchecked")
 @Repository("delUserDAO")
